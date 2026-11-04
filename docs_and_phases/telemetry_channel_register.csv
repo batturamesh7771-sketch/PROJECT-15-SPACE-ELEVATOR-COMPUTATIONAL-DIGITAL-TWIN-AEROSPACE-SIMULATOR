@@ -1,0 +1,128 @@
+Channel_Index,Channel_ID,Category_Code,Category_Name,Channel_Description,Engineering_Units,Min_Range,Max_Range,Nominal_Value,Mathematical_Provenance
+1,climber_altitude_km,KINE,Kinematics & Positioning,Climber Current Altitude,km,0.0,100000.0,Variable (0-100k),WGS-84 Radial Geocentric
+2,climber_radial_distance_m,KINE,Kinematics & Positioning,Radial Distance from Earth Center,m,6378137.0,106378137.0,Variable,WGS-84 Coordinate
+3,climber_velocity_kms,KINE,Kinematics & Positioning,Vertical Climbing Velocity,km/s,-0.200,+0.200,+0.125 (450 km/h),Drive Control Profile
+4,climber_velocity_ms,KINE,Kinematics & Positioning,Vertical Velocity in m/s,m/s,-200.0,+200.0,+125.0,Cruising Speed
+5,climber_acceleration_ms2,KINE,Kinematics & Positioning,Vertical Acceleration,m/s^2,-2.0,+2.0,0.0 (Cruising),Passenger Comfort Limit 0.5 m/s2
+6,climber_tangential_speed_kms,KINE,Kinematics & Positioning,Co-rotational Tangential Speed,km/s,0.465,7.757,Variable (omega * r),IERS Sidereal Rate
+7,earth_angular_rotation_rads,KINE,Kinematics & Positioning,Earth Sidereal Rotation Rate,rad/s,7.29211e-5,7.29211e-5,7.2921159e-5,IERS Standard 2010
+8,mission_elapsed_seconds,KINE,Kinematics & Positioning,Mission Elapsed Time (MET),s,0.0,31536000.0,Run-dependent,Internal High-Res Timer
+9,mission_elapsed_formatted,KINE,Kinematics & Positioning,MET Human Readable String,str,N/A,N/A,D:H:M:S,ISO 8601 String
+10,gravity_acceleration_ms2,GRAV,Gravitational & Centrifugal Dynamics,Local Inward Gravitational Acceleration,m/s^2,0.0352,9.7983,Variable (mu/r^2),Newtonian Gravity
+11,centrifugal_acceleration_ms2,GRAV,Gravitational & Centrifugal Dynamics,Local Outward Centrifugal Acceleration,m/s^2,0.0339,0.5657,Variable (omega^2 * r),Non-Inertial Centrifugal
+12,effective_g_ms2,GRAV,Gravitational & Centrifugal Dynamics,Net Effective Gravitational Acceleration,m/s^2,-0.5304,+9.7644,0.0000 at GEO,g_inward - a_centrifugal
+13,geostationary_radius_m,GRAV,Gravitational & Centrifugal Dynamics,Geostationary Equilibrium Radius,m,42164169.0,42164169.0,42164169.46,(mu / omega^2)^(1/3)
+14,coriolis_acceleration_ms2,GRAV,Gravitational & Centrifugal Dynamics,Kinematic Coriolis Acceleration,m/s^2,-0.0182,+0.0182,-0.01823,-2 * (Omega x V_rel)
+15,coriolis_lateral_force_n,GRAV,Gravitational & Centrifugal Dynamics,Transverse Coriolis Reaction Force,N,-364.6,+364.6,364.61 N at 125 m/s,2 * M_c * Omega * v_c
+16,tether_tension_base_mn,STRUCT,Structural & Tether Mechanics,Ground Anchor Static Tension,MN,4.0,5.0,4.50 MN,Base Working Tension
+17,tether_tension_geo_mn,STRUCT,Structural & Tether Mechanics,Geostationary Peak Axial Tension,MN,70.0,80.0,73.35 MN,Peak Taper Cross-Section
+18,tether_tension_apex_mn,STRUCT,Structural & Tether Mechanics,Apex Counterweight Balance Tension,MN,40.0,45.0,42.17 MN,Counterweight Tether Anchor
+19,tether_local_axial_stress_gpa,STRUCT,Structural & Tether Mechanics,Working Axial Tensile Stress,GPa,45.0,45.0,45.00 GPa (Invariant),Pearson Constant-Stress Criterion
+20,tether_peak_ultimate_strength_gpa,STRUCT,Structural & Tether Mechanics,Material Ultimate Failure Stress,GPa,95.0,100.0,95.00 GPa,SWCNT Experimental Limit
+21,tether_min_safety_factor,STRUCT,Structural & Tether Mechanics,Structural Factor of Safety,ratio,2.00,2.11,2.11 (Baseline),sigma_ult / sigma_work
+22,tether_taper_ratio_geo,STRUCT,Structural & Tether Mechanics,Taper Ratio at GEO relative to Base,ratio,1.60,1.65,1.6295,Pearson Closed-Form
+23,tether_total_mass_mt,STRUCT,Structural & Tether Mechanics,Total Integrated Megastructure Mass,Mt,5.0,5.5,5.21 Mt,"Discrete 1,000-Node Mass Integral"
+24,tether_cross_section_base_m2,STRUCT,Structural & Tether Mechanics,Equatorial Base Cross-Section,m^2,1.0e-4,1.0e-4,1.0e-4 m^2 (1.0 cm^2),Design Baseline
+25,tether_cross_section_geo_m2,STRUCT,Structural & Tether Mechanics,GEO Peak Cross-Section Area,m^2,1.60e-4,1.65e-4,1.6295e-4 m^2,A_0 * exp(...)
+26,tether_acoustic_velocity_kms,STRUCT,Structural & Tether Mechanics,Axial Longitudinal Sound Speed,km/s,30.0,31.0,30.38 km/s,sqrt(E / rho)
+27,c3_hyperbolic_excess_km2s2,ORB,Orbital & Interplanetary Missions,Characteristic Hyperbolic Excess Energy C3,km^2/s^2,-60.0,+50.0,26.74 at 76.7k km,v_tan^2 - v_esc^2
+28,delta_v_to_earth_escape_kms,ORB,Orbital & Interplanetary Missions,Delta-V required for Earth Escape,km/s,0.0,3.21,0.00 above 53k km,"max(0, v_esc - v_tan)"
+29,delta_v_to_mars_transfer_kms,ORB,Orbital & Interplanetary Missions,Injection Delta-V to Mars (Hohmann),km/s,0.0,5.98,0.00 above 62k km,Hohmann Interplanetary Transfer
+30,delta_v_to_jupiter_transfer_kms,ORB,Orbital & Interplanetary Missions,Injection Delta-V to Jupiter,km/s,0.0,8.75,0.00 above 82k km,Direct Hyperbolic Injection
+31,heliocentric_release_velocity_kms,ORB,Orbital & Interplanetary Missions,Heliocentric Inertial Release Speed,km/s,29.78,37.54,37.54 km/s at Apex,V_earth + V_tan
+32,orbital_apoapsis_altitude_km,ORB,Orbital & Interplanetary Missions,Resulting Free-Flight Apoapsis,km,200.0,Infinite,Hyperbolic Escape,Keplerian Orbital Elements
+33,orbital_periapsis_altitude_km,ORB,Orbital & Interplanetary Missions,Resulting Free-Flight Periapsis,km,0.0,100000.0,Release Altitude,Perigee Radius
+34,climber_mechanical_power_mw,POW,Power & Laser Beaming Propulsion,Instantaneous Mechanical Drive Power,MW,0.0,15.0,3.92 MW (Climbing),F_thrust * v_climb
+35,laser_ground_emitted_power_mw,POW,Power & Laser Beaming Propulsion,Ground Station Laser Optical Output,MW,0.0,50.0,12.56 MW,P_mech / eta_system
+36,laser_system_net_efficiency,POW,Power & Laser Beaming Propulsion,End-to-End Laser Beaming Efficiency,ratio,0.312,0.312,0.312 (31.2%),eta_laser(0.60) * eta_pv(0.52)
+37,laser_pv_receiver_efficiency,POW,Power & Laser Beaming Propulsion,Monochromatic GaAs Cell Efficiency,ratio,0.520,0.520,0.520 (52.0%),Monochromatic 1064 nm
+38,laser_wall_plug_efficiency,POW,Power & Laser Beaming Propulsion,Ground Diode Laser Wall-Plug Efficiency,ratio,0.600,0.600,0.600 (60.0%),Industrial Fiber Laser
+39,climber_regenerative_power_mw,POW,Power & Laser Beaming Propulsion,Regenerative Braking Harvest Power,MW,0.0,10.0,2.14 MW (Descending),Pinch-Roller Generator
+40,climber_cumulative_energy_gwh,POW,Power & Laser Beaming Propulsion,Total Cumulative Mission Energy,GWh,0.0,100.0,9.84 GWh,Integral P_laser dt
+41,solar_flux_wm2,ENV,Space Environment & Radiation,Solar Irradiance Flux,W/m^2,0.0,1361.2,1361.2 W/m^2 (In Sun),ASTM E490 Solar Constant
+42,earth_eclipse_state,ENV,Space Environment & Radiation,Planetary Umbra/Penumbra Eclipse Status,str,N/A,N/A,Direct Sunlight / Shadow,Geometric Shadow Cylinder
+43,climber_internal_temp_c,ENV,Space Environment & Radiation,Climber Pressurized Habitat Temp,deg C,+20.0,+25.0,+25.0 deg C,ECLSS Regulated Baseline
+44,tether_equilibrium_temp_c,ENV,Space Environment & Radiation,Tether Equilibrium Surface Temp,deg C,-160.0,+120.0,+120 deg C in Sun,Stefan-Boltzmann Radiation
+45,orbital_debris_spatial_flux,ENV,Space Environment & Radiation,Hypervelocity Debris Flux,/m^2/yr,1.0e-8,5.0e-5,2.3e-6 /m^2/yr,NASA ORDEM 3.1 Model
+46,radiation_dose_rate_msv_h,ENV,Space Environment & Radiation,Instantaneous Van Allen Radiation Dose,mSv/h,0.001,2.100,0.024 mSv/h (LEO),NASA AP-8/AE-8 Trapped Flux
+47,cumulative_radiation_dose_msv,ENV,Space Environment & Radiation,Total Integrated Passenger Radiation,mSv,0.0,50.0,16.3 mSv (Full Transit),Trapped Belt Time Integral
+48,atomic_oxygen_erosion_rate_nms,ENV,Space Environment & Radiation,LEO Carbon Nanotube AO Erosion,nm/s,0.0,0.05,0.012 nm/s at 400 km,MSIS-86 AO Reaction Rate
+49,tether_node_001250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 1250 km,MN,4.0,80.0,45.83,SciPy RK45 Discrete Node Tension
+50,tether_node_002500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 2500 km,MN,4.0,80.0,46.67,SciPy RK45 Discrete Node Tension
+51,tether_node_003750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 3750 km,MN,4.0,80.0,47.50,SciPy RK45 Discrete Node Tension
+52,tether_node_005000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 5000 km,MN,4.0,80.0,48.33,SciPy RK45 Discrete Node Tension
+53,tether_node_006250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 6250 km,MN,4.0,80.0,49.17,SciPy RK45 Discrete Node Tension
+54,tether_node_007500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 7500 km,MN,4.0,80.0,50.00,SciPy RK45 Discrete Node Tension
+55,tether_node_008750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 8750 km,MN,4.0,80.0,50.83,SciPy RK45 Discrete Node Tension
+56,tether_node_010000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 10000 km,MN,4.0,80.0,51.67,SciPy RK45 Discrete Node Tension
+57,tether_node_011250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 11250 km,MN,4.0,80.0,52.50,SciPy RK45 Discrete Node Tension
+58,tether_node_012500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 12500 km,MN,4.0,80.0,53.33,SciPy RK45 Discrete Node Tension
+59,tether_node_013750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 13750 km,MN,4.0,80.0,54.17,SciPy RK45 Discrete Node Tension
+60,tether_node_015000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 15000 km,MN,4.0,80.0,55.00,SciPy RK45 Discrete Node Tension
+61,tether_node_016250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 16250 km,MN,4.0,80.0,55.83,SciPy RK45 Discrete Node Tension
+62,tether_node_017500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 17500 km,MN,4.0,80.0,56.67,SciPy RK45 Discrete Node Tension
+63,tether_node_018750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 18750 km,MN,4.0,80.0,57.50,SciPy RK45 Discrete Node Tension
+64,tether_node_020000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 20000 km,MN,4.0,80.0,58.33,SciPy RK45 Discrete Node Tension
+65,tether_node_021250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 21250 km,MN,4.0,80.0,59.17,SciPy RK45 Discrete Node Tension
+66,tether_node_022500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 22500 km,MN,4.0,80.0,60.00,SciPy RK45 Discrete Node Tension
+67,tether_node_023750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 23750 km,MN,4.0,80.0,60.83,SciPy RK45 Discrete Node Tension
+68,tether_node_025000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 25000 km,MN,4.0,80.0,61.67,SciPy RK45 Discrete Node Tension
+69,tether_node_026250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 26250 km,MN,4.0,80.0,62.50,SciPy RK45 Discrete Node Tension
+70,tether_node_027500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 27500 km,MN,4.0,80.0,63.33,SciPy RK45 Discrete Node Tension
+71,tether_node_028750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 28750 km,MN,4.0,80.0,64.17,SciPy RK45 Discrete Node Tension
+72,tether_node_030000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 30000 km,MN,4.0,80.0,65.00,SciPy RK45 Discrete Node Tension
+73,tether_node_031250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 31250 km,MN,4.0,80.0,65.83,SciPy RK45 Discrete Node Tension
+74,tether_node_032500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 32500 km,MN,4.0,80.0,66.67,SciPy RK45 Discrete Node Tension
+75,tether_node_033750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 33750 km,MN,4.0,80.0,67.50,SciPy RK45 Discrete Node Tension
+76,tether_node_035000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 35000 km,MN,4.0,80.0,68.33,SciPy RK45 Discrete Node Tension
+77,tether_node_036250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 36250 km,MN,4.0,80.0,69.17,SciPy RK45 Discrete Node Tension
+78,tether_node_037500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 37500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+79,tether_node_038750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 38750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+80,tether_node_040000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 40000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+81,tether_node_041250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 41250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+82,tether_node_042500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 42500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+83,tether_node_043750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 43750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+84,tether_node_045000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 45000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+85,tether_node_046250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 46250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+86,tether_node_047500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 47500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+87,tether_node_048750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 48750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+88,tether_node_050000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 50000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+89,tether_node_051250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 51250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+90,tether_node_052500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 52500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+91,tether_node_053750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 53750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+92,tether_node_055000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 55000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+93,tether_node_056250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 56250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+94,tether_node_057500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 57500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+95,tether_node_058750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 58750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+96,tether_node_060000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 60000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+97,tether_node_061250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 61250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+98,tether_node_062500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 62500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+99,tether_node_063750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 63750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+100,tether_node_065000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 65000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+101,tether_node_066250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 66250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+102,tether_node_067500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 67500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+103,tether_node_068750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 68750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+104,tether_node_070000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 70000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+105,tether_node_071250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 71250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+106,tether_node_072500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 72500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+107,tether_node_073750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 73750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+108,tether_node_075000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 75000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+109,tether_node_076250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 76250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+110,tether_node_077500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 77500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+111,tether_node_078750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 78750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+112,tether_node_080000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 80000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+113,tether_node_081250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 81250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+114,tether_node_082500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 82500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+115,tether_node_083750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 83750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+116,tether_node_085000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 85000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+117,tether_node_086250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 86250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+118,tether_node_087500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 87500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+119,tether_node_088750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 88750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+120,tether_node_090000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 90000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+121,tether_node_091250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 91250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+122,tether_node_092500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 92500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+123,tether_node_093750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 93750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+124,tether_node_095000m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 95000 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+125,tether_node_096250m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 96250 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+126,tether_node_097500m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 97500 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension
+127,tether_node_098750m_tension_mn,FEA_TENS,"1,000-Node Structural Mesh",Axial tension at altitude 98750 km,MN,4.0,80.0,70.00,SciPy RK45 Discrete Node Tension

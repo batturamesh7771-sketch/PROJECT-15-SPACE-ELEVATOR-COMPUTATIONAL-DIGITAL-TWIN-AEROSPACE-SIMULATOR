@@ -1,0 +1,56 @@
+# Space Elevator Materials Library
+newmtl Torus_Hab_White
+Ka 0.25 0.25 0.25
+Kd 0.92 0.94 0.96
+Ks 0.40 0.40 0.40
+Ns 45.0
+d 1.0
+
+newmtl Photovoltaic_Blue
+Ka 0.10 0.15 0.35
+Kd 0.08 0.18 0.55
+Ks 0.95 0.95 0.98
+Ns 95.0
+d 1.0
+
+newmtl Biosphere_Glass
+Ka 0.20 0.35 0.45
+Kd 0.55 0.80 0.92
+Ks 0.95 0.95 0.95
+Ns 120.0
+d 0.45
+
+newmtl Titanium_Core
+Ka 0.20 0.20 0.22
+Kd 0.68 0.70 0.74
+Ks 0.70 0.70 0.72
+Ns 60.0
+d 1.0
+
+newmtl Composite_Corridor
+Ka 0.15 0.15 0.16
+Kd 0.35 0.37 0.40
+Ks 0.30 0.30 0.30
+Ns 25.0
+d 1.0
+
+newmtl Gold_Foil
+Ka 0.30 0.22 0.05
+Kd 0.88 0.72 0.18
+Ks 0.95 0.85 0.40
+Ns 85.0
+d 1.0
+
+newmtl Thermal_White
+Ka 0.30 0.30 0.30
+Kd 0.95 0.95 0.97
+Ks 0.30 0.30 0.30
+Ns 30.0
+d 1.0
+
+newmtl Graphene_Tether
+Ka 0.10 0.12 0.15
+Kd 0.18 0.22 0.28
+Ks 0.65 0.65 0.70
+Ns 50.0
+d 1.0

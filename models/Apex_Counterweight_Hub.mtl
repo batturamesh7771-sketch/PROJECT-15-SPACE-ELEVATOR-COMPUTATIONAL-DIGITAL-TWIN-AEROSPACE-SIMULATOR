@@ -1,0 +1,15 @@
+
+newmtl Ballast_Titanium
+Kd 0.28 0.30 0.32
+Ks 0.50 0.50 0.50
+Ns 40.0
+
+newmtl Accelerator_Orange
+Kd 0.88 0.44 0.08
+Ks 0.80 0.60 0.30
+Ns 60.0
+
+newmtl Photovoltaic_Blue
+Kd 0.06 0.14 0.45
+Ks 0.95 0.95 0.98
+Ns 100.0
