@@ -35,8 +35,6 @@
 
   <!-- Google Maps Places API -->
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=[REDACTED_GOOGLE_KEY]&libraries=places"></script>
-
   <!-- Embedded Three.js, Controls & GLTFLoader -->
 
   <script>/**
@@ -9405,8 +9403,7 @@
 
 </script>
 
-    <script src="day1_space_elevator_data.js"></script>
-  <script src="js/physics_engine.js"></script>
+    <script src="js/physics_engine.js"></script>
   <script src="js/materials_environment.js"></script>
   <script src="js/orbital_missions.js"></script>
   <script src="js/live_sync_client.js"></script>
@@ -9908,7 +9905,7 @@
     }
 
     // Safety timeout: dismiss loader after 2.5s maximum regardless of network/asset status
-    dismissLoader(); setTimeout(dismissLoader, 100);
+    dismissLoader(); setTimeout(dismissLoader, 50); setTimeout(dismissLoader, 500); window.addEventListener('DOMContentLoaded', dismissLoader);
 
 
 
@@ -10232,7 +10229,7 @@
 
     } else {
 
-      gltfLoader.load('day1_space_elevator.glb', mountUpperStation);
+      gltfLoader.load('day1_space_elevator.glb', mountUpperStation, undefined, (err) => { console.warn('Upper station fallback:', err); checkLoaded(); });
 
     }
 
